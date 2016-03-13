@@ -3,7 +3,7 @@
 int voltPin = 8;
 int keyPin = 9;
 
-SoftwareSerial
+
 
 void setup() {
   Serial.begin(38400);
@@ -30,8 +30,9 @@ void rebootNormal(){
   delay(1000);
 }
 
-void rebootAT(){
-  Serial.println("Reboot in AT mode.");
+void rebootAT(bool nowait=false){
+
+    Serial.println("Reboot in AT mode.");
   delay(1000);
   digitalWrite(voltPin, LOW);
   delay(100);
@@ -39,7 +40,11 @@ void rebootAT(){
   delay(100);
   digitalWrite(voltPin, HIGH);
   delay(1000);
-  
+  if(nowait){  
+    rebootNormal();
+  } else{
+    delay(15000);
+  }
 }
 
 
@@ -64,8 +69,9 @@ void loop() {
       }
       
       if(str == "t"){
-        rebootAT();
+        rebootAT(true);
         Serial.write("AT+NAME=ROBERT\r\n");
+        Serial.println("AT+NAME=ROBERT\r\n");
         delay(1000);
         rebootNormal();
       }
