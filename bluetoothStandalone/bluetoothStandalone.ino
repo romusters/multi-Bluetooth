@@ -31,8 +31,7 @@ void rebootNormal(){
 }
 
 void rebootAT(bool nowait=false){
-
-    Serial.println("Reboot in AT mode.");
+  Serial.println("Reboot in AT mode.");
   delay(1000);
   digitalWrite(voltPin, LOW);
   delay(100);
@@ -40,6 +39,7 @@ void rebootAT(bool nowait=false){
   delay(100);
   digitalWrite(voltPin, HIGH);
   delay(1000);
+  
   if(nowait){  
     rebootNormal();
   } else{
