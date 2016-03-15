@@ -65,6 +65,8 @@ bool Kr = false;
 bool KrKsKr = false;
 bool Krnew = false;
 
+String message = "";
+
 void loop() {
      
       if(str == "a"){
@@ -85,10 +87,17 @@ void loop() {
       
       Serial.print("Length of the string is: ");
       Serial.println(str.length());
+     
 
       while(!Kr){
         str = readData();
-        
+
+        if(str == "Ks#"){
+          while(true){
+            Serial.print("End of message, message was: ");
+            Serial.println(message);
+          }
+        }
         if(str.length() == 3){
           letter = str.charAt(2);
           //Serial.print("Received: ");
@@ -103,7 +112,7 @@ void loop() {
         }
         delay(100);
       }
-      
+      delay(2000);
 
       while(!KrKsKr){
         str = readData();
@@ -126,6 +135,7 @@ void loop() {
         delay(10);
         str = readData();
         if(str.length() == 3) {
+          message += letter;
           letter = str.charAt(2);
           Krnew = true;
           i += 1;
@@ -135,7 +145,7 @@ void loop() {
           delay(100);
         }
         delay(100);
-        Krnew = true; //REMOVE IN FUTURE
+        //Krnew = true; //REMOVE IN FUTURE
       }
       
 
