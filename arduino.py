@@ -61,7 +61,7 @@ def printDevices():
 	for bdaddr in nearby_devices:
 		print bdaddr
 		print bluetooth.lookup_name( bdaddr )
-		bluetooth.
+		#bluetooth.
 if __name__ == "__main__":
 	main()
 	#printDevices()
