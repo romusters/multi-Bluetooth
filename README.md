@@ -1,3 +1,5 @@
+To run the program, please run Arduino.py.
+
 Connect an Arduino bluetooth module to a desktop using a three way handshake protocol.
 
 Master and slave, respectively the desktop and the arduino, applications are implemented. 

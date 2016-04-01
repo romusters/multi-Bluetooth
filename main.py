@@ -1,7 +1,6 @@
-import receiver
-import sender
+#NOT USED: simulation only
 
-import module
+# import module
 import pygame
 
 white = (255,255,255)
@@ -85,27 +84,10 @@ def main():
 		pygame.display.update()
 
 if __name__ == "__main__":
-	#main()
+	main()
 
-	import time
-	import module
-
-	A = module.bluetoothModule(id = "A")
-	B = module.bluetoothModule(id = "B")
-	
-	idx = 0
-	while True:
-		var = "ball"
-		A.Ks = var
-		if idx%4 == 0:
-			B.Kr = 1
-		if
-		idx += 1
-		time.sleep(1)
-		if idx%4 == 0:
-
-			print "B knows A knows vault"
-
-
-			#B knows if there is a vault, then you need a code
-			#C knows code
+	# import time
+	# import module
+	#
+	# A = module.bluetoothModule(id = "A")
+	# B = module.bluetoothModule(id = "B")

@@ -1,6 +1,3 @@
-import receiver
-import sender
-
 class bluetoothModule():
 
 	def __init__(self, id=None, message=None):
