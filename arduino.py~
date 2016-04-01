@@ -13,7 +13,7 @@ def main():
 	sock.connect((mod1_addr, port))
 
 	#The data to be sent
-	word = "Victory#"
+	word = "Anton#"
 	for letter in word:
 		
 
